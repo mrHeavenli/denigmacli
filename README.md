@@ -23,3 +23,7 @@ Simply prepend the command with `torify`, like so:
 `torify python3 denigmacli.py code_to_explain.java`
 
 It's not quite reliable though, it does work but there's a possibility the response is a page "checking connection security". Shouldn't happen now that I've added some code to take care of Cloudflare.
+
+## Requirements
+
+`pip install -r requirements.txt`
