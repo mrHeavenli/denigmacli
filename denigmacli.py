@@ -2,8 +2,7 @@
 import requests
 import sys
 import json
-
-headers = {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"}
+import cloudscraper
 
 def parse_code_file(path):
     form_dict = {}
@@ -14,7 +13,19 @@ def parse_code_file(path):
 
 form_data = parse_code_file(sys.argv[1])
 
-req = requests.request("POST", "https://service.denigma.app/explain/demo/?p=1&engine_version=1", data=form_data, headers=headers)
+scraper = cloudscraper.create_scraper(
+    browser={
+        "browser" : "chrome",
+        "platform" : "windows",
+        "desktop" : True
+    }
+)
+
+req = scraper.request(
+    "POST",
+    "https://service.denigma.app/explain/demo/?p=1&engine_version=1",
+    data=form_data
+)
 
 for line in json.loads(req.text)["data"]:
     print(line)
