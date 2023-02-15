@@ -13,6 +13,10 @@ Example:
 
 `python3 denigmacli.py code_to_explain.java`
 
+## Requirements
+
+`pip install -r requirements.txt`
+
 ## Rate limiting
 
 As this program scrapes the demo page, there is a limit
@@ -22,8 +26,4 @@ Simply prepend the command with `torify`, like so:
 
 `torify python3 denigmacli.py code_to_explain.java`
 
-It's not quite reliable though, it does work but there's a possibility the response is a page "checking connection security". Shouldn't happen now that I've added some code to take care of Cloudflare.
-
-## Requirements
-
-`pip install -r requirements.txt`
+It's not quite reliable though, it does work but there's a possibility the response is that there is a Cloudflare Version 2 Captcha. The [Cloudflare bypassing module](https://github.com/VeNoMouS/cloudscraper) can't handle those.
