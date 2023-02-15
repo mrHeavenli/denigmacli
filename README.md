@@ -21,3 +21,5 @@ I've managed to bypass that by routing it through Tor, using [torify](https://li
 Simply prepend the command with `torify`, like so:
 
 `torify python3 denigmacli.py code_to_explain.java`
+
+It's not quite reliable though, it does work but there's a possibility the response is a page "checking connection security". 
