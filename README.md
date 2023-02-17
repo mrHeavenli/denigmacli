@@ -1,5 +1,7 @@
 # denigmacli
 
+Note: this is really unreliable(screw you cloudflare)
+
 ## What is it?
 
 A commandline interface for [denigma](https://denigma.app/),
