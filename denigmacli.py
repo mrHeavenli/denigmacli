@@ -4,20 +4,18 @@ import sys
 import json
 import cloudscraper
 
-def parse_code_file(path):
-    form_dict = {}
+def parse_code_file(path) -> dict:
     with open(path) as file:
-        for line in file.readlines():
-            form_dict[line] = ""
+        form_dict = {line:"" for line in file.readlines()}
     return form_dict
 
 form_data = parse_code_file(sys.argv[1])
 
 scraper = cloudscraper.create_scraper(
     browser={
-        "browser" : "chrome",
+        "browser"  : "chrome",
         "platform" : "windows",
-        "desktop" : True
+        "desktop"  : True
     }
 )
 
